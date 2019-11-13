@@ -74,7 +74,7 @@ class Gain
         {
             $log = json_encode($log, JSON_UNESCAPED_UNICODE);
         }
-        $log_path = 'sql_log/'.date('Y-m-d',time()).'-sql_log.txt';
+        $log_path = __DIR__.'/sql_log/'.date('Y-m-d',time()).'-sql_log.txt';
         $ts = fopen($log_path,"a+");
         fputs($ts,date('Y-m-d H:i:s',time()).'  '.$log."\r\n");
         fclose($ts);
