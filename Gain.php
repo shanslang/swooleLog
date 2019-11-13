@@ -15,7 +15,11 @@ class Gain
     {
             //$this->writeslog($response);
       		$arrtwo = json_decode($response, true);
-
+            if(!$arrtwo){
+      			$this->writeslog('未传参');
+                return 'sss';
+      		}
+        
             if(!array_key_exists('data', $arrtwo) || !array_key_exists('sign', $arrtwo)){
                 $this->writeslog('缺少参数');
                 return '缺少参数';
